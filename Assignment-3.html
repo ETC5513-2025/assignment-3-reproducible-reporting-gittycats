@@ -84,13 +84,80 @@ ul.task-list li input[type="checkbox"] {
 <li>The body of the report should contain the following sections:</li>
 </ul>
 <p><strong>Methodology:</strong></p>
-<p>Maximum 300 words</p>
-<p>Should include a figure and a table and those must be referenced in the text and have adequate captions</p>
+<p>To investigate the relationship between income inequality and life expectancy, we analyzed data from two primary sources: life expectancy data from Our World in Data and Gini coefficient data from the World Bank. The analysis focused on the period from 1990 to 2020, covering multiple countries worldwide.</p>
+<p>The Gini coefficient, ranging from 0 to 1, measures income inequality within countries, where 0 represents perfect equality and 1 represents maximum inequality. Life expectancy at birth represents the average number of years a newborn would live under current mortality rates.</p>
+<p>We performed the following data processing and analysis steps:</p>
+<ol type="1">
+<li><p>Data cleaning by removing missing values and standardizing country names</p></li>
+<li><p>Merging the datasets based on country and year</p></li>
+<li><p>Computing summary statistics and correlation analysis</p></li>
+<li><p>Creating visualizations to examine relationships and trends</p></li>
+</ol>
+<p>The cross-sectional analysis examined the relationship between life expectancy and Gini coefficient at select years. The longitudinal analysis tracked changes in both variables across time.</p>
+<p>Table and Figure References:</p>
+<p>As shown in Table 1, the average life expectancy was 72.82 years (SD = 7.84), and the average Gini coefficient was 0.38 (SD = 0.09), reflecting substantial variability across countries.</p>
+<p>Figure 1 illustrates trends over time, showing a steady increase in life expectancy and a mild decline in income inequality from 1990 to 2020.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Table 1. Summary Statistics of Life Expectancy and Gini Coefficient (1990-2020)</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Mean_Life_Expectancy</th>
+<th style="text-align: right;">SD_Life_Expectancy</th>
+<th style="text-align: right;">Mean_Gini</th>
+<th style="text-align: right;">SD_Gini</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">72.82</td>
+<td style="text-align: right;">7.84</td>
+<td style="text-align: right;">0.38</td>
+<td style="text-align: right;">0.09</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Assignment-3_files/figure-html/time-trend-analysis%20-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
 <p><strong>Results:</strong></p>
-<p>Maximum 200 words. Should include either a figure or a table.</p>
+<p>Our results demonstrate a negative correlation between income inequality and life expectancy (r = -0.45). Countries with higher Gini coefficients tend to have lower life expectancy.</p>
+<p>Over the 30-year period, life expectancy increased globally from approximately 70 years in 1990 to 76 years in 2020. Meanwhile, income inequality slightly declined, with the average Gini coefficient decreasing from 0.39 to 0.35.</p>
+<p>Figure 2 presents cross-sectional snapshots by decade. The scatter plots show a persistent negative relationship across time points, supporting the association between inequality and health outcomes.</p>
+<p>Notably, countries with Gini coefficients below 0.3 generally achieved life expectancies above 80 years, while nations with coefficients above 0.45 frequently had life expectancies under 70 years.</p>
+<p>The relationship remained consistent across decades, though the strength of the correlation varied by region and development level. This suggests that while income inequality is an important factor in life expectancy, other variables likely play significant roles in determining population health outcomes.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Assignment-3_files/figure-html/scatter-plot-decades-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Assignment-3_files/figure-html/main-visualization%20-1.png" class="img-fluid figure-img" width="1152"></p>
+</figure>
+</div>
+</div>
+</div>
 <p><strong>Discussion, conclusion and recommendations</strong></p>
 <p><strong>Reference section:</strong></p>
-<p>Include at least 1 reference.</p>
+<p>Include at least 1 reference.<br>
+<br>
+</p>
 </section>
 
 </main>
