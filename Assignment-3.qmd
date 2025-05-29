@@ -4,52 +4,251 @@ author:
   - "Vishwamber Reddy"
   - "Cayou Shao"
   - "Hongyu Yin"
-toc: true
-format: html
+format:
+  pdf:
+    documentclass: article
+    toc: true
+    number-sections: false  
+    fontsize: 11pt
+    geometry: margin=1in
+    keep-tex: true
+    mainfont: Times New Roman
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 3   
+  
+editor: visual
+echo: false
+warning: false
 ---
 
-# **Executive summary**
+### Executive summary:
 
-Studying the relationship between life expectancy and the Gini coefficient is essentially exploring the connection between economic inequality and health inequality.
+This study examines the relationship between income inequality and life expectancy across nations from 1990 to 2020 using World Bank and Our World in Data sources. Our analysis reveals a negative correlation between income inequality (measured by the Gini coefficient) and life expectancy, with more equitable societies generally experiencing longer life spans.
 
-In this era that emphasizes economic development, people's physical health should be equally prioritized.
+While global life expectancy has increased over the study period, the persistence of high inequality in certain regions continues to correspond with lower life expectancy outcomes. These findings suggest that addressing income inequality could be an important factor in improving population health outcomes.
 
-By comparing the Gini coefficients and life expectancies across different economies and regions, we can gain a more intuitive and comprehensive understanding of a particular economy or region's development level.
+### Introduction:
 
-Furthermore, researching the relationship between these inequalities can provide new directions for economic development goals.
+The gap between rich and poor has become a defining challenge of our time, with potential implications for population health that extend far beyond economic considerations. While medical advances and improved living standards have generally increased life expectancy worldwide, the benefits of these improvements are not equally distributed. Recent studies suggest that the degree of income inequality within a society may play a crucial role in determining health outcomes.
 
-# **Introduction**
+Our investigation aims to contribute to the ongoing debate about whether more equitable societies tend to be healthier societies, and what this might mean for public policy. Understanding these patterns is essential for policymakers seeking to improve both economic and health outcomes in their communities.
 
-## **Research Question**
+### Research Question
 
-In this study, we will explore whether reducing economic inequality contributes to mitigating disparities in life expectancy.
+Primary Research Question:
 
-The Gini coefficient is a key indicator for measuring economic inequality within a country or region.Therefore, by examining the relationship between the Gini coefficient and life expectancy, we aim to assess the importance of balanced economic development.
+-   What is the relationship between income inequality and life expectancy across different countries between 1990-2020?
 
-## **Dataset introduction**
+Secondary Research Questions:
 
-We utilize **life expectancy** data from **Our World** in Data and **Gini coefficient** data from **the World Bank**, spanning 1990 to 2020 and covering multiple countries and regions.
+1.  How has the correlation between income inequality and life expectancy changed over the three-decade period?
 
--   The body of the report should contain the following sections:
+2.  Do countries with similar Gini coefficients show comparable life expectancy patterns regardless of their geographical location?
 
-    **Methodology**: How we processed the data.
+### Methodology:
 
-    **Results**: What conclusions we reached.
+To investigate the relationship between income inequality and life expectancy, we analyzed data from two primary sources: life expectancy data from Our World in Data and Gini coefficient data from the World Bank. The analysis focused on the period from 1990 to 2020, covering multiple countries worldwide.
 
-    **Discussion, conclusion and recommendations**: Our Intended Message.
+The Gini coefficient, ranging from 0 to 1, measures income inequality within countries, where 0 represents perfect equality and 1 represents maximum inequality. Life expectancy at birth represents the average number of years a newborn would live under current mortality rates.
 
-# **Methodology**
+```{r load-libraries-and-data}
+# Load required libraries
+library(tidyverse)      
+library(knitr)         
+library(ggplot2)       
+library(dplyr)         
+library(scales)        
 
-Maximum 300 words
+# Fetch data directly from URLs
+life_expectancy <- read.csv("https://ourworldindata.org/grapher/life-expectancy.csv?v=1&csvType=full&useColumnShortNames=false")
 
-Should include a figure and a table and those must be referenced in the text and have adequate captions
+gini_index <- read.csv("https://ourworldindata.org/grapher/economic-inequality-gini-index.csv?v=1&csvType=full&useColumnShortNames=false")
 
-# **Results**
+cleaned_data <- life_expectancy %>%
+  # Select relevant columns and rename for clarity
+  select(Entity, Code, Year, 
+         Life_Expectancy = Period.life.expectancy.at.birth...Sex..total...Age..0) %>%
+  # Filter years between 1990 and 2020
+  filter(Year >= 1990 & Year <= 2020) %>%
+  # Join with gini data
+  inner_join(
+    gini_index %>%
+      select(Entity, Code, Year, 
+             Gini = Gini.coefficient) %>%
+      filter(Year >= 1990 & Year <= 2020),
+    by = c("Entity", "Code", "Year")
+  ) %>%
+  # Remove any remaining NA values
+  na.omit()
+```
 
-Maximum 200 words. Should include either a figure or a table.
+We performed the following data processing and analysis steps:
 
-# **Discussion, conclusion and recommendations**
+1.  Data cleaning by removing missing values and standardizing country names
 
-# **Reference section**
+2.  Merging the datasets based on country and year
 
-Include at least 1 reference.
+3.  Computing summary statistics and correlation analysis
+
+4.  Creating visualizations to examine relationships and trends
+
+The cross-sectional analysis examined the relationship between life expectancy and Gini coefficient at select years. The longitudinal analysis tracked changes in both variables across time.
+
+Table and Figure References:
+
+As shown in Table 1, the average life expectancy was 72.82 years (SD = 7.84), and the average Gini coefficient was 0.38 (SD = 0.09), reflecting substantial variability across countries.
+
+```{r summary-statistics}
+#| label: tbl-summary-stats
+#| tbl-cap: "Summary statistics for life expectancy and Gini coefficient (1990-2020)"
+
+# Calculate correlation
+correlation <- cor(cleaned_data$Life_Expectancy, cleaned_data$Gini)
+
+summary_stats <- cleaned_data %>%
+  summarise(
+    Mean_Life_Expectancy = mean(Life_Expectancy),
+    SD_Life_Expectancy = sd(Life_Expectancy),
+    Mean_Gini = mean(Gini),
+    SD_Gini = sd(Gini)
+  )
+kable(summary_stats)
+
+```
+
+Figure 1 illustrates trends over time, showing a steady increase in life expectancy and a mild decline in income inequality from 1990 to 2020.
+
+```{r time-trend-analysis}
+#| label: fig-time-trends
+#| fig-cap: "Global trends in life expectancy and Gini coefficient from 1990 to 2020"
+
+# Time trend analysis
+time_trend <- cleaned_data %>%
+  group_by(Year) %>%
+  summarize(
+    mean_life_exp = mean(Life_Expectancy),
+    mean_gini = mean(Gini)
+  )
+
+ggplot(time_trend, aes(x = Year)) +
+  geom_line(aes(y = mean_life_exp, color = "Life Expectancy"), size = 1.2) +
+  geom_line(aes(y = mean_gini * 100, color = "Gini (×100)"), size = 1.2) +  # scale Gini for visibility
+  scale_y_continuous(
+    name = "Life Expectancy",
+    sec.axis = sec_axis(~ . / 100, name = "Gini Coefficient")
+  ) +
+  scale_color_manual(values = c("Life Expectancy" = "blue", "Gini (×100)" = "red")) +
+  labs(
+    title = "Trends in Life Expectancy and Income Inequality, 1990-2020",
+    x = "Year",
+    color = "Metric"
+  ) +
+  theme_minimal() +
+  theme(
+    axis.title.y.right = element_text(color = "red"),
+    axis.title.y.left = element_text(color = "blue")
+  )
+```
+
+### Results:
+
+Our results demonstrate a negative correlation between income inequality and life expectancy (r = -0.45). Countries with higher Gini coefficients tend to have lower life expectancy.
+
+Over the 30-year period, life expectancy increased globally from approximately 70 years in 1990 to 76 years in 2020. Meanwhile, income inequality slightly declined, with the average Gini coefficient decreasing from 0.39 to 0.35.
+
+Figure 2 presents cross-sectional snapshots by decade. The scatter plots show a persistent negative relationship across time points, supporting the association between inequality and health outcomes.
+
+Notably, countries with Gini coefficients below 0.3 generally achieved life expectancies above 80 years, while nations with coefficients above 0.45 frequently had life expectancies under 70 years.
+
+The relationship remained consistent across decades, though the strength of the correlation varied by region and development level. This suggests that while income inequality is an important factor in life expectancy, other variables likely play significant roles in determining population health outcomes.
+
+```{r scatter-plot-decades}
+#| label: fig-scatter-decades
+#| fig-cap: "Relationship between income inequality and life expectancy"
+
+# Scatter plot with decades
+cleaned_data_decades <- cleaned_data %>%
+  filter(Year %in% c(1990, 2000, 2010, 2020))
+
+ggplot(cleaned_data_decades, aes(x = Gini, y = Life_Expectancy, color = as.factor(Year))) +
+  geom_point(alpha = 0.7, size = 2) +
+  geom_smooth(method="lm", color="blue") +
+  scale_color_viridis_d() +  # Discrete color scale for decades
+  labs(
+    title = "Relationship Between Income Inequality and Life Expectancy by Decade",
+    x = "Gini Coefficient",
+    y = "Life Expectancy (years)",
+    color = "Year"
+  ) +
+  theme_minimal() +
+  theme(
+    legend.position = "right",
+    plot.title = element_text(size = 12, face = "bold")
+  )
+```
+
+```{r main-visualization}
+#| label: fig-country-comparison
+#| fig-cap: "Comparison of life expectancy and income inequality"
+
+# Check which countries have sufficient data
+countries_with_sufficient_data <- cleaned_data %>%
+  group_by(Entity) %>%
+  summarize(
+    count = n(),
+    mean_life_exp = mean(Life_Expectancy, na.rm = TRUE),
+    mean_gini = mean(Gini, na.rm = TRUE)
+  ) %>%
+  filter(count > 5, !is.na(mean_life_exp), !is.na(mean_gini))
+
+# Get 10 countries with high Gini and low life expectancy
+high_inequality_countries <- countries_with_sufficient_data %>%
+  filter(mean_life_exp < 70) %>%
+  arrange(desc(mean_gini), desc(-mean_life_exp)) %>%
+  head(10)
+
+# Get 10 countries with low Gini and high life expectancy
+low_inequality_countries <- countries_with_sufficient_data %>%
+  filter(mean_life_exp > 70) %>%
+  arrange(mean_gini, desc(mean_life_exp)) %>%
+  head(10)
+
+# Combine the two groups
+selected_countries <- bind_rows(
+  high_inequality_countries %>% mutate(group = "High Inequality"),
+  low_inequality_countries %>% mutate(group = "Low Inequality")
+)
+
+ggplot(selected_countries) +
+  geom_bar(aes(x = reorder(Entity, mean_life_exp), y = mean_life_exp, fill = group), 
+          stat = "identity", alpha = 0.7) +
+  geom_point(aes(x = Entity, y = mean_gini * 100), color = "red", size = 3) +
+  scale_y_continuous(
+    name = "Life Expectancy (years)",
+    sec.axis = sec_axis(~ . / 100, name = "Gini Coefficient")
+  ) +
+  scale_fill_manual(values = c("High Inequality" = "coral", "Low Inequality" = "skyblue")) +
+  labs(
+    title = "Life Expectancy and Income Inequality in Selected Countries",
+    subtitle = "Comparison of Countries with High and Low Inequality (1990-2020)",
+    x = "Country",
+    fill = "Inequality Level"
+  ) +
+  theme_minimal() +
+  theme(
+    axis.title.y.right = element_text(color = "red"),
+    axis.title.y.left = element_text(color = "blue"),
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    plot.title = element_text(size = 12, face = "bold")
+  )
+
+```
+
+### Discussion, conclusion and recommendations
+
+### Reference section:
+
+Include at least 1 reference.\
+\

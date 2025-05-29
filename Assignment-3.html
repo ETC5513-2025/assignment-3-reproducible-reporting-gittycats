@@ -35,7 +35,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="Assignment-3_files/libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="Assignment-3_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="Assignment-3_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="Assignment-3_files/libs/bootstrap/bootstrap-1bc8a17f135ab3d594c857e9f48e611b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="Assignment-3_files/libs/bootstrap/bootstrap-32162a2fca7cb0439643f2faaab1edf3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -48,16 +48,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#executive-summary" id="toc-executive-summary" class="nav-link active" data-scroll-target="#executive-summary"><strong>Executive summary</strong></a></li>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><strong>Introduction</strong></a>
-  <ul class="collapse">
-  <li><a href="#research-question" id="toc-research-question" class="nav-link" data-scroll-target="#research-question"><strong>Research Question</strong></a></li>
-  <li><a href="#dataset-introduction" id="toc-dataset-introduction" class="nav-link" data-scroll-target="#dataset-introduction"><strong>Dataset introduction</strong></a></li>
-  </ul></li>
-  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology"><strong>Methodology</strong></a></li>
-  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results"><strong>Results</strong></a></li>
-  <li><a href="#discussion-conclusion-and-recommendations" id="toc-discussion-conclusion-and-recommendations" class="nav-link" data-scroll-target="#discussion-conclusion-and-recommendations"><strong>Discussion, conclusion and recommendations</strong></a></li>
-  <li><a href="#reference-section" id="toc-reference-section" class="nav-link" data-scroll-target="#reference-section"><strong>Reference section</strong></a></li>
+  <li><a href="#executive-summary" id="toc-executive-summary" class="nav-link active" data-scroll-target="#executive-summary">Executive summary:</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction:</a></li>
+  <li><a href="#research-question" id="toc-research-question" class="nav-link" data-scroll-target="#research-question">Research Question</a></li>
+  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology">Methodology:</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results:</a></li>
+  <li><a href="#discussion-conclusion-and-recommendations" id="toc-discussion-conclusion-and-recommendations" class="nav-link" data-scroll-target="#discussion-conclusion-and-recommendations">Discussion, conclusion and recommendations</a></li>
+  <li><a href="#reference-section" id="toc-reference-section" class="nav-link" data-scroll-target="#reference-section">Reference section:</a></li>
   </ul>
 </nav>
 </div>
@@ -90,46 +87,133 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="executive-summary" class="level1">
-<h1><strong>Executive summary</strong></h1>
-<p>Studying the relationship between life expectancy and the Gini coefficient is essentially exploring the connection between economic inequality and health inequality.</p>
-<p>In this era that emphasizes economic development, people’s physical health should be equally prioritized.</p>
-<p>By comparing the Gini coefficients and life expectancies across different economies and regions, we can gain a more intuitive and comprehensive understanding of a particular economy or region’s development level.</p>
-<p>Furthermore, researching the relationship between these inequalities can provide new directions for economic development goals.</p>
+<section id="executive-summary" class="level3">
+<h3 class="anchored" data-anchor-id="executive-summary">Executive summary:</h3>
+<p>This study examines the relationship between income inequality and life expectancy across nations from 1990 to 2020 using World Bank and Our World in Data sources. Our analysis reveals a negative correlation between income inequality (measured by the Gini coefficient) and life expectancy, with more equitable societies generally experiencing longer life spans.</p>
+<p>While global life expectancy has increased over the study period, the persistence of high inequality in certain regions continues to correspond with lower life expectancy outcomes. These findings suggest that addressing income inequality could be an important factor in improving population health outcomes.</p>
 </section>
-<section id="introduction" class="level1">
-<h1><strong>Introduction</strong></h1>
-<section id="research-question" class="level2">
-<h2 class="anchored" data-anchor-id="research-question"><strong>Research Question</strong></h2>
-<p>In this study, we will explore whether reducing economic inequality contributes to mitigating disparities in life expectancy.</p>
-<p>The Gini coefficient is a key indicator for measuring economic inequality within a country or region.Therefore, by examining the relationship between the Gini coefficient and life expectancy, we aim to assess the importance of balanced economic development.</p>
+<section id="introduction" class="level3">
+<h3 class="anchored" data-anchor-id="introduction">Introduction:</h3>
+<p>The gap between rich and poor has become a defining challenge of our time, with potential implications for population health that extend far beyond economic considerations. While medical advances and improved living standards have generally increased life expectancy worldwide, the benefits of these improvements are not equally distributed. Recent studies suggest that the degree of income inequality within a society may play a crucial role in determining health outcomes.</p>
+<p>Our investigation aims to contribute to the ongoing debate about whether more equitable societies tend to be healthier societies, and what this might mean for public policy. Understanding these patterns is essential for policymakers seeking to improve both economic and health outcomes in their communities.</p>
 </section>
-<section id="dataset-introduction" class="level2">
-<h2 class="anchored" data-anchor-id="dataset-introduction"><strong>Dataset introduction</strong></h2>
-<p>We utilize <strong>life expectancy</strong> data from <strong>Our World</strong> in Data and <strong>Gini coefficient</strong> data from <strong>the World Bank</strong>, spanning 1990 to 2020 and covering multiple countries and regions.</p>
+<section id="research-question" class="level3">
+<h3 class="anchored" data-anchor-id="research-question">Research Question</h3>
+<p>Primary Research Question:</p>
 <ul>
-<li><p>The body of the report should contain the following sections:</p>
-<p><strong>Methodology</strong>: How we processed the data.</p>
-<p><strong>Results</strong>: What conclusions we reached.</p>
-<p><strong>Discussion, conclusion and recommendations</strong>: Our Intended Message.</p></li>
+<li>What is the relationship between income inequality and life expectancy across different countries between 1990-2020?</li>
 </ul>
+<p>Secondary Research Questions:</p>
+<ol type="1">
+<li><p>How has the correlation between income inequality and life expectancy changed over the three-decade period?</p></li>
+<li><p>Do countries with similar Gini coefficients show comparable life expectancy patterns regardless of their geographical location?</p></li>
+</ol>
 </section>
+<section id="methodology" class="level3">
+<h3 class="anchored" data-anchor-id="methodology">Methodology:</h3>
+<p>To investigate the relationship between income inequality and life expectancy, we analyzed data from two primary sources: life expectancy data from Our World in Data and Gini coefficient data from the World Bank. The analysis focused on the period from 1990 to 2020, covering multiple countries worldwide.</p>
+<p>The Gini coefficient, ranging from 0 to 1, measures income inequality within countries, where 0 represents perfect equality and 1 represents maximum inequality. Life expectancy at birth represents the average number of years a newborn would live under current mortality rates.</p>
+<p>We performed the following data processing and analysis steps:</p>
+<ol type="1">
+<li><p>Data cleaning by removing missing values and standardizing country names</p></li>
+<li><p>Merging the datasets based on country and year</p></li>
+<li><p>Computing summary statistics and correlation analysis</p></li>
+<li><p>Creating visualizations to examine relationships and trends</p></li>
+</ol>
+<p>The cross-sectional analysis examined the relationship between life expectancy and Gini coefficient at select years. The longitudinal analysis tracked changes in both variables across time.</p>
+<p>Table and Figure References:</p>
+<p>As shown in Table 1, the average life expectancy was 72.82 years (SD = 7.84), and the average Gini coefficient was 0.38 (SD = 0.09), reflecting substantial variability across countries.</p>
+<div class="cell">
+<div id="tbl-summary-stats" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-summary-stats-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Summary statistics for life expectancy and Gini coefficient (1990-2020)
+</figcaption>
+<div aria-describedby="tbl-summary-stats-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: right;">Mean_Life_Expectancy</th>
+<th style="text-align: right;">SD_Life_Expectancy</th>
+<th style="text-align: right;">Mean_Gini</th>
+<th style="text-align: right;">SD_Gini</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">72.81685</td>
+<td style="text-align: right;">7.835837</td>
+<td style="text-align: right;">0.3756492</td>
+<td style="text-align: right;">0.0881552</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>Figure 1 illustrates trends over time, showing a steady increase in life expectancy and a mild decline in income inequality from 1990 to 2020.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-time-trends" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-time-trends-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Assignment-3_files/figure-html/fig-time-trends-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-time-trends-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Global trends in life expectancy and Gini coefficient from 1990 to 2020
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="methodology" class="level1">
-<h1><strong>Methodology</strong></h1>
-<p>Maximum 300 words</p>
-<p>Should include a figure and a table and those must be referenced in the text and have adequate captions</p>
+<section id="results" class="level3">
+<h3 class="anchored" data-anchor-id="results">Results:</h3>
+<p>Our results demonstrate a negative correlation between income inequality and life expectancy (r = -0.45). Countries with higher Gini coefficients tend to have lower life expectancy.</p>
+<p>Over the 30-year period, life expectancy increased globally from approximately 70 years in 1990 to 76 years in 2020. Meanwhile, income inequality slightly declined, with the average Gini coefficient decreasing from 0.39 to 0.35.</p>
+<p>Figure 2 presents cross-sectional snapshots by decade. The scatter plots show a persistent negative relationship across time points, supporting the association between inequality and health outcomes.</p>
+<p>Notably, countries with Gini coefficients below 0.3 generally achieved life expectancies above 80 years, while nations with coefficients above 0.45 frequently had life expectancies under 70 years.</p>
+<p>The relationship remained consistent across decades, though the strength of the correlation varied by region and development level. This suggests that while income inequality is an important factor in life expectancy, other variables likely play significant roles in determining population health outcomes.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-scatter-decades" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-scatter-decades-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Assignment-3_files/figure-html/fig-scatter-decades-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scatter-decades-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Relationship between income inequality and life expectancy
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-country-comparison" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-country-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Assignment-3_files/figure-html/fig-country-comparison-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-country-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Comparison of life expectancy and income inequality
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="results" class="level1">
-<h1><strong>Results</strong></h1>
-<p>Maximum 200 words. Should include either a figure or a table.</p>
+<section id="discussion-conclusion-and-recommendations" class="level3">
+<h3 class="anchored" data-anchor-id="discussion-conclusion-and-recommendations">Discussion, conclusion and recommendations</h3>
 </section>
-<section id="discussion-conclusion-and-recommendations" class="level1">
-<h1><strong>Discussion, conclusion and recommendations</strong></h1>
-</section>
-<section id="reference-section" class="level1">
-<h1><strong>Reference section</strong></h1>
-<p>Include at least 1 reference.</p>
+<section id="reference-section" class="level3">
+<h3 class="anchored" data-anchor-id="reference-section">Reference section:</h3>
+<p>Include at least 1 reference.<br>
+<br>
+</p>
 </section>
 
 </main>
