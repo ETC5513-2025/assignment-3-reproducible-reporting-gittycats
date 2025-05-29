@@ -4,25 +4,36 @@ author:
   - "Vishwamber Reddy"
   - "Cayou Shao"
   - "Hongyu Yin"
-format: html
-echo: False
+format:
+  pdf:
+    documentclass: article
+    toc: true
+    number-sections: false  
+    fontsize: 11pt
+    geometry: margin=1in
+    keep-tex: true
+    mainfont: Times New Roman
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 3   
+  
+editor: visual
+echo: false
+warning: false
 ---
 
-### **Table of contents:**
-
-Defining using adequate YAML syntax
-
-**Executive summary:**
+### Executive summary:
 
 Maximum of 4 sentences
 
-**Introduction:**
+### Introduction:
 
 Maximum 10 sentences
 
 -   The body of the report should contain the following sections:
 
-**Methodology:**
+### Methodology:
 
 To investigate the relationship between income inequality and life expectancy, we analyzed data from two primary sources: life expectancy data from Our World in Data and Gini coefficient data from the World Bank. The analysis focused on the period from 1990 to 2020, covering multiple countries worldwide.
 
@@ -46,7 +57,7 @@ As shown in Table 1, the average life expectancy was 72.82 years (SD = 7.84), an
 
 Figure 1 illustrates trends over time, showing a steady increase in life expectancy and a mild decline in income inequality from 1990 to 2020.
 
-```{r load-libraries-and-data, message=FALSE, warning=FALSE}
+```{r load-libraries-and-data}
 # Load required libraries
 library(tidyverse)      
 library(knitr)         
@@ -78,6 +89,9 @@ cleaned_data <- life_expectancy %>%
 ```
 
 ```{r summary-statistics}
+#| label: tbl-summary-stats
+#| tbl-cap: "Summary statistics for life expectancy and Gini coefficient (1990-2020)"
+
 # Calculate correlation
 correlation <- cor(cleaned_data$Life_Expectancy, cleaned_data$Gini)
 
@@ -87,15 +101,15 @@ summary_stats <- cleaned_data %>%
     SD_Life_Expectancy = sd(Life_Expectancy),
     Mean_Gini = mean(Gini),
     SD_Gini = sd(Gini)
-  ) %>%
-  kable(
-    caption = "Table 1. Summary Statistics of Life Expectancy and Gini Coefficient (1990-2020)",
-    digits = 2
   )
-summary_stats
+kable(summary_stats)
+
 ```
 
-```{r time-trend-analysis , fig.width=10, fig.height=6, message=FALSE, warning=FALSE}
+```{r time-trend-analysis}
+#| label: fig-time-trends
+#| fig-cap: "Global trends in life expectancy and Gini coefficient from 1990 to 2020"
+
 # Time trend analysis
 time_trend <- cleaned_data %>%
   group_by(Year) %>%
@@ -113,7 +127,7 @@ ggplot(time_trend, aes(x = Year)) +
   ) +
   scale_color_manual(values = c("Life Expectancy" = "blue", "Gini (×100)" = "red")) +
   labs(
-    title = "Figure 1. Trends in Life Expectancy and Income Inequality, 1990-2020",
+    title = "Trends in Life Expectancy and Income Inequality, 1990-2020",
     x = "Year",
     color = "Metric"
   ) +
@@ -124,7 +138,7 @@ ggplot(time_trend, aes(x = Year)) +
   )
 ```
 
-**Results:**
+### Results:
 
 Our results demonstrate a negative correlation between income inequality and life expectancy (r = -0.45). Countries with higher Gini coefficients tend to have lower life expectancy.
 
@@ -136,7 +150,10 @@ Notably, countries with Gini coefficients below 0.3 generally achieved life expe
 
 The relationship remained consistent across decades, though the strength of the correlation varied by region and development level. This suggests that while income inequality is an important factor in life expectancy, other variables likely play significant roles in determining population health outcomes.
 
-```{r scatter-plot-decades,fig.width=10, fig.height=6, message=FALSE, warning=FALSE}
+```{r scatter-plot-decades}
+#| label: fig-scatter-decades
+#| fig-cap: "Relationship between income inequality and life expectancy"
+
 # Scatter plot with decades
 cleaned_data_decades <- cleaned_data %>%
   filter(Year %in% c(1990, 2000, 2010, 2020))
@@ -146,7 +163,7 @@ ggplot(cleaned_data_decades, aes(x = Gini, y = Life_Expectancy, color = as.facto
   geom_smooth(method="lm", color="blue") +
   scale_color_viridis_d() +  # Discrete color scale for decades
   labs(
-    title = "Figure 2. Relationship Between Income Inequality and Life Expectancy by Decade",
+    title = "Relationship Between Income Inequality and Life Expectancy by Decade",
     x = "Gini Coefficient",
     y = "Life Expectancy (years)",
     color = "Year"
@@ -158,7 +175,10 @@ ggplot(cleaned_data_decades, aes(x = Gini, y = Life_Expectancy, color = as.facto
   )
 ```
 
-```{r main-visualization , fig.width=12, fig.height=8}
+```{r main-visualization}
+#| label: fig-country-comparison
+#| fig-cap: "Comparison of life expectancy and income inequality"
+
 # Check which countries have sufficient data
 countries_with_sufficient_data <- cleaned_data %>%
   group_by(Entity) %>%
@@ -197,7 +217,7 @@ ggplot(selected_countries) +
   ) +
   scale_fill_manual(values = c("High Inequality" = "coral", "Low Inequality" = "skyblue")) +
   labs(
-    title = "Figure 3. Life Expectancy and Income Inequality in Selected Countries",
+    title = "Life Expectancy and Income Inequality in Selected Countries",
     subtitle = "Comparison of Countries with High and Low Inequality (1990-2020)",
     x = "Country",
     fill = "Inequality Level"
@@ -212,9 +232,9 @@ ggplot(selected_countries) +
 
 ```
 
-**Discussion, conclusion and recommendations**
+### Discussion, conclusion and recommendations
 
-**Reference section:**
+### Reference section:
 
 Include at least 1 reference.\
 \
