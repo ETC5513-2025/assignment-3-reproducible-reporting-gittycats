@@ -248,6 +248,34 @@ ggplot(selected_countries) +
 
 ### Discussion, conclusion and recommendations
 
+We have discussed the relationship between the gini-coefficient and life expectations. We conclude that the two variables have negative relations, A negative correlation between life expectancy and the Gini coefficient means that, on average, countries (or regions) with greater income inequality tend to have shorter lifespans. The main channels driving this relationship are:
+
+1.  Unequal Access to Resources
+
+Healthcare: Wealthier individuals can afford higher-quality care, preventive screenings, and insurance, while poorer people may delay or forgo treatment due to cost.
+
+Nutrition & Living Conditions: Affluent households can buy healthier food and live in cleaner, less crowded environments; low-income families face greater exposure to pollution, overcrowding, and food insecurity.
+
+2.  Psychosocial Stress and Social Capital
+
+Chronic Stress: Large income gaps fuel social comparison and status anxiety, triggering persistent stress responses that harm cardiovascular, immune, and endocrine systems.
+
+Weakened Community Bonds: High-inequality societies often exhibit lower trust and mutual support, reducing the informal networks that share health information and provide neighborhood‐level care.
+
+3.  Underinvestment in Public Health and Welfare
+
+Weak Redistribution: When tax, welfare, and public services disproportionately benefit the well-off, funding for universal healthcare, elder care, and child health programs suffers—limiting gains in overall longevity.
+
+Education Gaps: Education strongly influences health literacy and behaviors; in unequal societies, lower-educated groups lack knowledge about disease prevention and healthy lifestyles, increasing chronic‐disease risks.
+
+4.  Cumulative and Intergenerational Effects
+
+Early-Life Disadvantages: Childhood poverty—malnutrition, exposure to toxins, or family financial stress—can stunt physical and cognitive development, with effects that persist into adulthood.
+
+Limited Social Mobility: In highly unequal settings, children from poor families have fewer opportunities to escape poverty, perpetuating health disadvantages across generations.
+
+In summary, higher Gini coefficients signal deeper divides in income, opportunity, and social support. These divides translate into unequal healthcare, nutrition, education, and chronic stress—together driving down average life expectancy. Policies that reduce inequality (stronger redistribution, universal health coverage, and investments in education and social services) therefore play a key role in boosting population health and longevity.
+
 According to our discussion, we get a conclusion that there is a negative relationship between gini-coefficient and life-expectation. We get four explanations for that.
 
 First, due to resource inequality, there will be more poor people and less rich people if there is a high gini coefficient. Rich people could afford higher-quality care, preventive screenings, and insurance, while poorer people may delay or forgo treatment due to cost. And besides Affluent households can buy healthier food and live in cleaner, less crowded environments; low-income families face greater exposure to pollution, overcrowding, and food insecurity.
@@ -269,5 +297,3 @@ De Vogli, R., Mistry, R., Gnesotto, R., & Cornia, G. A. (2005). Has the relation
 -   Jaba, E., Bălan, C. B., & Robu, I.-B. (2014). The relationship between life expectancy at birth and health expenditures estimated by a cross‐country and time‐series analysis. Procedia Economics and Finance, 15, 108–114. DergiPark
 
 -   Tripathi, S., & Maiti, M. (2023). Does urbanization improve health outcomes: a cross country level analysis. Asia‐Pacific Journal of Regional Science, 7, 277–316. https://doi.org/10.1007/s41685-022-00268-1 SpringerLink
-
--   GBD 2015 Tobacco Collaborators. (2017). Smoking prevalence and attributable disease burden in 195 countries and territories, 1990–2015: a systematic analysis from the Global Burden of Disease Study 2015. The Lancet, 389(10082), 1885–1906. https://doi.org/10.1016/S0140-6736(17)30819-X thelancet.com
