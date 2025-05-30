@@ -1,53 +1,40 @@
 ---
 title: "The Relationship Between Life Expectancy and the Gini Coefficient"
-author:
+author: 
   - "Vishwamber Reddy"
   - "Cayou Shao"
   - "Hongyu Yin"
 format:
-  pdf:
-    documentclass: article
-    toc: true
-    number-sections: false  
-    fontsize: 11pt
-    geometry: margin=1in
-    keep-tex: true
-    mainfont: Times New Roman
-  html:
-    theme: cosmo
-    toc: true
-    toc-depth: 3   
-  
+  revealjs:
+    theme: simple
+    slide-number: true
+    show-slide-number: all
+    footer: "Life Expectancy and Income Inequality Analysis"
+    scrollable: true
+    smaller: true
 editor: visual
-echo: false
-warning: false
+execute:
+  echo: false
+  warning: false
 ---
 
-### Executive summary:
 
-This study examines the relationship between income inequality and life expectancy across nations from 1990 to 2020 using World Bank and Our World in Data sources. Our analysis reveals a negative correlation between income inequality (measured by the Gini coefficient) and life expectancy, with more equitable societies generally experiencing longer life spans.
+## Introduction {.smaller}
 
-While global life expectancy has increased over the study period, the persistence of high inequality in certain regions continues to correspond with lower life expectancy outcomes. These findings suggest that addressing income inequality could be an important factor in improving population health outcomes.
+- Research Question: What is the relationship between income inequality and life expectancy?
+- Time period: 1990-2020
+- Global scope with country-level analysis
 
-### Introduction:
+## Data Sources
 
-The gap between rich and poor has become a defining challenge of our time, with potential implications for population health that extend far beyond economic considerations. While medical advances and improved living standards have generally increased life expectancy worldwide, the benefits of these improvements are not equally distributed. Recent studies suggest that the degree of income inequality within a society may play a crucial role in determining health outcomes.
+- Life expectancy data from Our World in Data
+- Gini coefficient data from World Bank
+- Coverage: 30-year period (1990-2020)
+- Key metrics:
+    - Life expectancy at birth
+    - Gini coefficient (0-1 scale)
 
-Our investigation aims to contribute to the ongoing debate about whether more equitable societies tend to be healthier societies, and what this might mean for public policy. Understanding these patterns is essential for policymakers seeking to improve both economic and health outcomes in their communities.
-
-### Research Question
-
-Primary Research Question:
-
--   What is the relationship between income inequality and life expectancy across different countries between 1990-2020?
-
-Secondary Research Questions:
-
-1.  How has the correlation between income inequality and life expectancy changed over the three-decade period?
-
-2.  Do countries with similar Gini coefficients show comparable life expectancy patterns regardless of their geographical location?
-
-### Methodology:
+## Methodology: {.smaller}
 
 To investigate the relationship between income inequality and life expectancy, we analyzed data from two primary sources: life expectancy data from Our World in Data and Gini coefficient data from the World Bank. The analysis focused on the period from 1990 to 2020, covering multiple countries worldwide.
 
@@ -96,12 +83,13 @@ We performed the following data processing and analysis steps:
 
 The cross-sectional analysis examined the relationship between life expectancy and Gini coefficient at select years. The longitudinal analysis tracked changes in both variables across time.
 
+## 
+
 Table and Figure References:
 
 As shown in Table 1, the average life expectancy was 72.82 years (SD = 7.84), and the average Gini coefficient was 0.38 (SD = 0.09), reflecting substantial variability across countries.
 
 ```{r summary-statistics}
-#| label: tbl-summary-stats
 #| tbl-cap: "Summary statistics for life expectancy and Gini coefficient (1990-2020)"
 
 # Calculate correlation
@@ -121,7 +109,6 @@ kable(summary_stats)
 Figure 1 illustrates trends over time, showing a steady increase in life expectancy and a mild decline in income inequality from 1990 to 2020.
 
 ```{r time-trend-analysis}
-#| label: fig-time-trends
 #| fig-cap: "Global trends in life expectancy and Gini coefficient from 1990 to 2020"
 
 # Time trend analysis
@@ -152,7 +139,7 @@ ggplot(time_trend, aes(x = Year)) +
   )
 ```
 
-### Results:
+## Results: {.smaller}
 
 Our results demonstrate a negative correlation between income inequality and life expectancy (r = -0.45). Countries with higher Gini coefficients tend to have lower life expectancy.
 
@@ -160,12 +147,7 @@ Over the 30-year period, life expectancy increased globally from approximately 7
 
 Figure 2 presents cross-sectional snapshots by decade. The scatter plots show a persistent negative relationship across time points, supporting the association between inequality and health outcomes.
 
-Notably, countries with Gini coefficients below 0.3 generally achieved life expectancies above 80 years, while nations with coefficients above 0.45 frequently had life expectancies under 70 years.
-
-The relationship remained consistent across decades, though the strength of the correlation varied by region and development level. This suggests that while income inequality is an important factor in life expectancy, other variables likely play significant roles in determining population health outcomes.
-
 ```{r scatter-plot-decades}
-#| label: fig-scatter-decades
 #| fig-cap: "Relationship between income inequality and life expectancy"
 
 # Scatter plot with decades
@@ -189,8 +171,13 @@ ggplot(cleaned_data_decades, aes(x = Gini, y = Life_Expectancy, color = as.facto
   )
 ```
 
+##
+
+Notably, countries with Gini coefficients below 0.3 generally achieved life expectancies above 80 years, while nations with coefficients above 0.45 frequently had life expectancies under 70 years.
+
+The relationship remained consistent across decades, though the strength of the correlation varied by region and development level. This suggests that while income inequality is an important factor in life expectancy, other variables likely play significant roles in determining population health outcomes.
+
 ```{r main-visualization}
-#| label: fig-country-comparison
 #| fig-cap: "Comparison of life expectancy and income inequality"
 
 # Check which countries have sufficient data
@@ -246,9 +233,4 @@ ggplot(selected_countries) +
 
 ```
 
-### Discussion, conclusion and recommendations
-
-### Reference section:
-
-Include at least 1 reference.\
-\
+## Conclusion
