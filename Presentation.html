@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.6.42">
 
   <meta name="author" content="Vishwamber Reddy">
-  <meta name="author" content="Cayou Shao">
+  <meta name="author" content="Caoyu Shao">
   <meta name="author" content="Hongyu Yin">
   <title>The Relationship Between Life Expectancy and the Gini Coefficient</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -140,7 +140,7 @@ Vishwamber Reddy
 </div>
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Cayou Shao 
+Caoyu Shao 
 </div>
 </div>
 <div class="quarto-title-author">
@@ -159,7 +159,7 @@ Hongyu Yin
 <li>Global scope with country-level analysis</li>
 </ul>
 </section>
-<section id="data-sources" class="slide level2">
+<section id="data-sources" class="slide level2 smaller">
 <h2>Data Sources</h2>
 <ul>
 <li>Life expectancy data from Our World in Data</li>
@@ -174,25 +174,43 @@ Hongyu Yin
 </section>
 <section id="methodology" class="slide level2 smaller scrollable">
 <h2>Methodology:</h2>
-<p>To investigate the relationship between income inequality and life expectancy, we analyzed data from two primary sources: life expectancy data from Our World in Data and Gini coefficient data from the World Bank. The analysis focused on the period from 1990 to 2020, covering multiple countries worldwide.</p>
-<p>The Gini coefficient, ranging from 0 to 1, measures income inequality within countries, where 0 represents perfect equality and 1 represents maximum inequality. Life expectancy at birth represents the average number of years a newborn would live under current mortality rates.</p>
-<p>We performed the following data processing and analysis steps:</p>
 <ol type="1">
-<li><p>Data cleaning by removing missing values and standardizing country names</p></li>
-<li><p>Merging the datasets based on country and year</p></li>
-<li><p>Computing summary statistics and correlation analysis</p></li>
-<li><p>Creating visualizations to examine relationships and trends</p></li>
+<li>Data Collection &amp; Cleaning:</li>
 </ol>
-<p>The cross-sectional analysis examined the relationship between life expectancy and Gini coefficient at select years. The longitudinal analysis tracked changes in both variables across time.</p>
+<ul>
+<li><p>Imported life expectancy and Gini coefficient data from Our World in Data</p></li>
+<li><p>Filtered data for 1990-2020 period</p></li>
+<li><p>Merged datasets and removed NA values</p></li>
+</ul>
+<ol start="2" type="1">
+<li>Analysis Steps:</li>
+</ol>
+<ul>
+<li><p>Calculated summary statistics and correlation between variables</p></li>
+<li><p>Created time trend analysis showing global averages over 30 years</p></li>
+<li><p>Generated scatter plots by decades to visualize relationship changes</p></li>
+<li><p>Compared 20 selected countries (10 high inequality vs 10 low inequality) based on mean values</p></li>
+</ul>
 </section>
-<section id="section" class="slide level2">
+<section id="section" class="slide level2 scrollable">
 <h2></h2>
-<p>Table and Figure References:</p>
-<p>As shown in Table 1, the average life expectancy was 72.82 years (SD = 7.84), and the average Gini coefficient was 0.38 (SD = 0.09), reflecting substantial variability across countries.</p>
+<ol start="3" type="1">
+<li>Visualization Approach:</li>
+</ol>
+<ul>
+<li><p>Used dual-axis plots to show both metrics simultaneously</p></li>
+<li><p>Applied color coding to distinguish between high/low inequality countries</p></li>
+<li><p>Implemented trend lines and point markers for clear pattern identification</p></li>
+</ul>
 <div class="cell">
+<div id="tbl-summary-statistics" class="cell quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-summary-statistics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Summary statistics for life expectancy and Gini coefficient (1990-2020)
+</figcaption>
+<div aria-describedby="tbl-summary-statistics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="caption-top">
-<caption>Summary statistics for life expectancy and Gini coefficient (1990-2020)</caption>
+<table class="do-not-create-environment cell caption-top">
 <thead>
 <tr class="header">
 <th style="text-align: right;">Mean_Life_Expectancy</th>
@@ -212,29 +230,103 @@ Hongyu Yin
 </table>
 </div>
 </div>
-<p>Figure 1 illustrates trends over time, showing a steady increase in life expectancy and a mild decline in income inequality from 1990 to 2020.</p>
-
-<img data-src="Presentation_files/figure-revealjs/time-trend-analysis-1.png" width="960" class="r-stretch quarto-figure-center"><p class="caption">Global trends in life expectancy and Gini coefficient from 1990 to 2020</p></section>
-<section id="results" class="slide level2 smaller">
-<h2>Results:</h2>
-<p>Our results demonstrate a negative correlation between income inequality and life expectancy (r = -0.45). Countries with higher Gini coefficients tend to have lower life expectancy.</p>
-<p>Over the 30-year period, life expectancy increased globally from approximately 70 years in 1990 to 76 years in 2020. Meanwhile, income inequality slightly declined, with the average Gini coefficient decreasing from 0.39 to 0.35.</p>
-<p>Figure 2 presents cross-sectional snapshots by decade. The scatter plots show a persistent negative relationship across time points, supporting the association between inequality and health outcomes.</p>
-
-<img data-src="Presentation_files/figure-revealjs/scatter-plot-decades-1.png" width="960" class="r-stretch quarto-figure-center"><p class="caption">Relationship between income inequality and life expectancy</p></section>
+</figure>
+</div>
+</div>
+<p>Table and Figure References:</p>
+<p>As shown in <a href="#/tbl-summary-statistics" class="quarto-xref">Table&nbsp;1</a>, the average life expectancy was 72.82 years (SD = 7.84), and the average Gini coefficient was 0.38 (SD = 0.09), reflecting substantial variability across countries.</p>
+</section>
 <section id="section-1" class="slide level2">
 <h2></h2>
+
+<img data-src="Presentation_files/figure-revealjs/fig-time-trends-1.png" width="960" class="r-stretch quarto-figure-center" id="fig-time-trends"><p class="caption">
+Figure&nbsp;1: Global trends in life expectancy and Gini coefficient from 1990 to 2020
+</p><p><a href="#/fig-time-trends" class="quarto-xref">Figure&nbsp;1</a> illustrates trends over time, showing a steady increase in life expectancy and a mild decline in income inequality from 1990 to 2020.</p>
+</section>
+<section id="results" class="slide level2 smaller">
+<h2>Results:</h2>
+<div style="font-size: 0.8em;">
+<p>Our results demonstrate a negative correlation between income inequality and life expectancy (r = -0.45). Countries with higher Gini coefficients tend to have lower life expectancy.</p>
+<p>Over the 30-year period, life expectancy increased globally from approximately 70 years in 1990 to 76 years in 2020. Meanwhile, income inequality slightly declined, with the average Gini coefficient decreasing from 0.39 to 0.35.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-scatter-plot-decades" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-scatter-plot-decades-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="Presentation_files/figure-revealjs/fig-scatter-plot-decades-1.png" width="960">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scatter-plot-decades-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Relationship between income inequality and life expectancy
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><a href="#/fig-scatter-plot-decades" class="quarto-xref">Figure&nbsp;2</a> presents cross-sectional snapshots by decade. The scatter plots show a persistent negative relationship across time points, supporting the association between inequality and health outcomes.</p>
+</div>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+<div style="font-size: 0.8em;">
 <p>Notably, countries with Gini coefficients below 0.3 generally achieved life expectancies above 80 years, while nations with coefficients above 0.45 frequently had life expectancies under 70 years.</p>
 <p>The relationship remained consistent across decades, though the strength of the correlation varied by region and development level. This suggests that while income inequality is an important factor in life expectancy, other variables likely play significant roles in determining population health outcomes.</p>
+</div>
 
-<img data-src="Presentation_files/figure-revealjs/main-visualization-1.png" width="960" class="r-stretch quarto-figure-center"><p class="caption">Comparison of life expectancy and income inequality</p></section>
-<section id="conclusion" class="slide level2">
+<img data-src="Presentation_files/figure-revealjs/fig-main-visualization-1.png" width="960" class="r-stretch quarto-figure-center" id="fig-main-visualization"><p class="caption">
+Figure&nbsp;3: Comparison of life expectancy and income inequality
+</p></section>
+<section id="conclusion" class="slide level2 smaller scrollable">
 <h2>Conclusion</h2>
 <p>According to our discussion, we get a conclusion that there is a negative relationship between gini-coefficient and life-expectation. We get four explanations for that.</p>
-<p>First, due to resource inequality, there will be more poor people and less rich people if there is a high gini coefficient. Rich people could afford higher-quality care, preventive screenings, and insurance, while poorer people may delay or forgo treatment due to cost. And besides Affluent households can buy healthier food and live in cleaner, less crowded environments; low-income families face greater exposure to pollution, overcrowding, and food insecurity.</p>
-<p>Second, due to Psychosocial Stress and Social Capital, large income gaps fuel social comparison and status anxiety, triggering persistent stress responses that harm cardiovascular, immune, and endocrine systems. What’s more, High-inequality societies often exhibit lower trust and mutual support, reducing the informal networks that share health information and provide neighborhood‐level care.</p>
-<p>Third, due to underinvestment in Public Health and Welfare.When tax, welfare, and public services disproportionately benefit the well-off, funding for universal healthcare, elder care, and child health programs suffers—limiting gains in overall longevity.Besides, Education strongly influences health literacy and behaviors; in unequal societies, lower-educated groups lack knowledge about disease prevention and healthy lifestyles, increasing chronic‐disease risks.</p>
-<p>Lastly,due to cumulative and Intergenerational Effect, Childhood poverty—malnutrition, exposure to toxins, or family financial stress—can stunt physical and cognitive development, with effects that persist into adulthood.Besides, in highly unequal settings, children from poor families have fewer opportunities to escape poverty, perpetuating health disadvantages across generations.</p>
+<div style="font-size: 0.8em;">
+<ol type="1">
+<li>Resource Inequality</li>
+</ol>
+<ul>
+<li>Higher Gini coefficients indicate greater concentration of wealth among fewer people</li>
+<li>Rich populations access better healthcare, preventive screenings, and insurance</li>
+<li>Poor populations often delay or forgo treatment due to cost</li>
+<li>Affluent households maintain healthier lifestyles through better nutrition and living conditions</li>
+</ul>
+<ol start="2" type="1">
+<li>Psychosocial Stress and Social Capital</li>
+</ol>
+<ul>
+<li>Large income gaps increase social comparison and status anxiety</li>
+<li>Chronic stress responses harm cardiovascular, immune, and endocrine systems</li>
+<li>High-inequality societies show reduced trust and mutual support</li>
+<li>Weakened social networks limit health information sharing and community care</li>
+</ul>
+</div>
+</section>
+<section class="slide level2 scrollable">
+
+<div style="font-size: 0.8em;">
+<ol start="3" type="1">
+<li>Underinvestment in Public Health and Welfare</li>
+</ol>
+<ul>
+<li>Unequal societies often underfund universal healthcare and public health programs</li>
+<li>Limited welfare services reduce overall population longevity</li>
+<li>Education gaps affect health literacy and preventive behaviors</li>
+<li>Lower-educated groups face increased chronic disease risks</li>
+</ul>
+<ol start="4" type="1">
+<li>Cumulative and Intergenerational Effects</li>
+</ol>
+<ul>
+<li>Childhood poverty impacts physical and cognitive development</li>
+<li>Early life disadvantages persist into adulthood</li>
+<li>Limited social mobility in unequal societies</li>
+<li>Health disadvantages perpetuate across generations</li>
+</ul>
+</div>
+</section>
+<section id="section-3" class="slide level2 center" data-background-color="#f7f7f7">
+<h2></h2>
+<div class="center" style="font-size: 3em; text-align: center;">
+<p>Thank You</p>
+</div>
 
 </section>
     </div>
