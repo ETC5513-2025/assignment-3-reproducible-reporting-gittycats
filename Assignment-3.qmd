@@ -276,7 +276,6 @@ Limited Social Mobility: In highly unequal settings, children from poor families
 
 In summary, higher Gini coefficients signal deeper divides in income, opportunity, and social support. These divides translate into unequal healthcare, nutrition, education, and chronic stress—together driving down average life expectancy. Policies that reduce inequality (stronger redistribution, universal health coverage, and investments in education and social services) therefore play a key role in boosting population health and longevity.
 
-
 ### References:
 
 -   De Vogli, R., Mistry, R., Gnesotto, R., & Cornia, G. A. (2005). Has the relation between income inequality and life expectancy disappeared? Evidence from Italy and top industrialised countries. Journal of Epidemiology & Community Health, 59(2), 158–162. https://doi.org/10.1136/jech.2004.020651 ResearchGate
