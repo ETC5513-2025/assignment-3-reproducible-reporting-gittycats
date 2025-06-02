@@ -8,7 +8,7 @@ An analysis of the relationship between income inequality (measured by the Gini 
 
 ## Group Members
 * Vishwamber Reddy
-* Cayou Shao
+* Caoyu Shao
 * Hongyu Yin
 
 ## Data Sources
