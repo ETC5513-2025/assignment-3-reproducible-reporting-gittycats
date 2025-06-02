@@ -100,7 +100,7 @@ Table and Figure References:
 
 As shown in Table 1, the average life expectancy was 72.82 years (SD = 7.84), and the average Gini coefficient was 0.38 (SD = 0.09), reflecting substantial variability across countries.
 
-```{r summary-statistics}
+```{r}
 #| label: tbl-summary-stats
 #| tbl-cap: "Summary statistics for life expectancy and Gini coefficient (1990-2020)"
 
@@ -120,7 +120,7 @@ kable(summary_stats)
 
 Figure 1 illustrates trends over time, showing a steady increase in life expectancy and a mild decline in income inequality from 1990 to 2020.
 
-```{r time-trend-analysis}
+```{r}
 #| label: fig-time-trends
 #| fig-cap: "Global trends in life expectancy and Gini coefficient from 1990 to 2020"
 
@@ -164,7 +164,7 @@ Notably, countries with Gini coefficients below 0.3 generally achieved life expe
 
 The relationship remained consistent across decades, though the strength of the correlation varied by region and development level. This suggests that while income inequality is an important factor in life expectancy, other variables likely play significant roles in determining population health outcomes.
 
-```{r scatter-plot-decades}
+```{r}
 #| label: fig-scatter-decades
 #| fig-cap: "Relationship between income inequality and life expectancy"
 
@@ -189,7 +189,7 @@ ggplot(cleaned_data_decades, aes(x = Gini, y = Life_Expectancy, color = as.facto
   )
 ```
 
-```{r main-visualization}
+```{r}
 #| label: fig-country-comparison
 #| fig-cap: "Comparison of life expectancy and income inequality"
 

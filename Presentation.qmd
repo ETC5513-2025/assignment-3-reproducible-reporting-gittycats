@@ -31,7 +31,7 @@ execute:
 -   Coverage: 30-year period (1990-2020)
 -   Key metrics:
     -   Life expectancy at birth
-    -   Gini coefficient (0-1 scale)
+    -   Gini coefficient (0-1 scale)(measures income inequality within countries)
 
 ## Methodology: {.smaller}
 
@@ -53,7 +53,7 @@ execute:
 
 -   Compared 20 selected countries (10 high inequality vs 10 low inequality) based on mean values
 
-## 
+------------------------------------------------------------------------
 
 3.  Visualization Approach:
 
@@ -116,7 +116,7 @@ Table and Figure References:
 
 As shown in @tbl-summary-statistics, the average life expectancy was 72.82 years (SD = 7.84), and the average Gini coefficient was 0.38 (SD = 0.09), reflecting substantial variability across countries.
 
-## 
+------------------------------------------------------------------------
 
 ```{r}
 #| label: fig-time-trends
@@ -187,7 +187,7 @@ ggplot(cleaned_data_decades, aes(x = Gini, y = Life_Expectancy, color = as.facto
 @fig-scatter-plot-decades presents cross-sectional snapshots by decade. The scatter plots show a persistent negative relationship across time points, supporting the association between inequality and health outcomes.
 :::
 
-## 
+------------------------------------------------------------------------
 
 ::: {style="font-size: 0.8em;"}
 Notably, countries with Gini coefficients below 0.3 generally achieved life expectancies above 80 years, while nations with coefficients above 0.45 frequently had life expectancies under 70 years.
@@ -288,10 +288,4 @@ According to our discussion, we get a conclusion that there is a negative relati
 -   Early life disadvantages persist into adulthood
 -   Limited social mobility in unequal societies
 -   Health disadvantages perpetuate across generations
-:::
-
-##  {.center background-color="#f7f7f7"}
-
-::: {.center style="font-size: 4em; text-align: center;"}
-*Thank You*
 :::
